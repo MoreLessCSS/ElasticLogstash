@@ -26,6 +26,8 @@ RUN rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 COPY /repos/elasticsearch.repo /etc/yum.repos.d/elasticsearch.repo
 RUN yum install -y logstash
 
+COPY /filters/logstash-filter.conf /etc/logstash/conf.d/logstash-filter.conf
+
 RUN chown -R elasticsearch:elasticsearch /usr/share/logstash/ \
     && chown -R elasticsearch:elasticsearch /var/log/logstash/ \
     && chown -R elasticsearch:elasticsearch /etc/logstash/
@@ -33,4 +35,4 @@ RUN chown -R elasticsearch:elasticsearch /usr/share/logstash/ \
 EXPOSE 24224:24224
 
 USER elasticsearch
-CMD ["/usr/share/logstash/bin/logstash"]
+CMD ["/usr/share/logstash/bin/logstash -f /etc/logstash/conf.d/logstash-filter.conf"]
