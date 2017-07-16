@@ -33,4 +33,4 @@ RUN chown -R elasticsearch:elasticsearch /usr/share/logstash/ \
 EXPOSE 24224:24224
 
 USER elasticsearch
-CMD ["/usr/share/logstash/bin/logstash -e 'input { stdin { } } output { stdout {} }'"]
+CMD ["/usr/share/logstash/bin/logstash"]
