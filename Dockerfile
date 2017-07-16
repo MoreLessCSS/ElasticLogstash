@@ -27,7 +27,7 @@ RUN useradd -ms /bin/bash elasticsearch \
 
 RUN rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 COPY /repos/elasticsearch.repo /etc/yum.repos.d/elasticsearch.repo
-RUN sudo yum install -y logstash
+RUN yum install -y logstash
 
 RUN chown -R elasticsearch:elasticsearch /usr/share/logstash/ \
     && chown -R elasticsearch:elasticsearch /var/log/logstash/ \
