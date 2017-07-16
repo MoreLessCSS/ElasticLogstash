@@ -5,15 +5,6 @@ MAINTAINER me <me@me.com>
 LABEL Description="elasticsearch 5.4"
 
 ENV ES_VERSION=5.4.0 \
-    CLUSTER_NAME="meCustomer" \
-    NODE_NAME="elkmaster1" \
-    HTTP_PORT_ES=9200 \
-    NETWORK_HOST=0.0.0.0 \
-    MINIMUM_MASTER_NODES=1 \
-    MAXIMUM_LOCAL_STORAGE_NODES=1 \
-    NODE_ATTR_RACK=centOS7 \
-    ELASTIC_PWD="getme" \
-    GOSU_VERSION=1.9 \
     JAVA_HOME="/usr/java/jre1.8.0_121/" \
     HEAP_SIZE="2g" \
     JVM_OPTS="-Xmx2g -Xms2g -XX:MaxPermSize=1024m" \
